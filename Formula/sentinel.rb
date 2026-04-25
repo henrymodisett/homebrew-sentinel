@@ -1,8 +1,8 @@
 class Sentinel < Formula
   desc "Autonomous meta-agent for software projects, across multiple LLM providers"
   homepage "https://github.com/autumngarage/sentinel"
-  url "https://github.com/autumngarage/sentinel/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "440b46f3ec7490e21c2e01a598d4451cd960a32fbd4164428ea7cfdbb6b6aa8a"
+  url "https://github.com/autumngarage/sentinel/archive/refs/tags/v0.4.1.tar.gz"
+  sha256 "d15d410dd8d93b577e59c082d219e8216ccd12d42ceb5be7b29cc8036dec6069"
   license "MIT"
 
   depends_on "python@3.11"
