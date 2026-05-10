@@ -8,6 +8,8 @@ class Sentinel < Formula
   depends_on "python@3.11"
   depends_on "uv"
 
+  preserve_rpath
+
   def install
     # Install the Python package into a venv under libexec
     venv = libexec/"venv"
@@ -16,8 +18,10 @@ class Sentinel < Formula
     bin.install_symlink venv/"bin/sentinel"
 
     # Install lenses and templates alongside the package
-    (libexec/"lenses").install Dir["lenses/**/*"]
-    (libexec/"templates").install Dir["templates/**/*"]
+    lenses = Dir["lenses/**/*"]
+    templates = Dir["templates/**/*"]
+    (libexec/"lenses").install lenses unless lenses.empty?
+    (libexec/"templates").install templates unless templates.empty?
   end
 
   def caveats
